@@ -47,6 +47,8 @@ def make_text(chains):
 
         # Note that for long texts (like a full book), this might mean
         # it would run for a very long time.
+        if char_limit and len(' '.join(words)) > char_limit:
+            break
 
         word = choice(chains[key])
         words.append(word)
